@@ -22,6 +22,8 @@
         <directory></directory>
         <includes>
           <include>Dockerfile</include>
+          <include>docker-compose.yml</include>
+          <include>.env</include>
         </includes>
     </fileSet>
   </fileSets>

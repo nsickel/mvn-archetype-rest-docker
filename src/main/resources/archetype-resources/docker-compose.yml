@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  java-service:
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    container_name: java-service
+    ports:
+      - 8080:8080
+      - 4848:4848
+    environment:
+      MYSQL_HOST: "${MYSQL_HOST}"
+      MYSQL_USER: "${MYSQL_USER}"
+      MYSQL_PASSWORD: "${MYSQL_PASSWORD}"
+      MYSQL_DATABASE: "${MYSQL_DATABASE}"
+      MYSQL_PORT: "${MYSQL_PORT}"
+      JDBC_RESOURCE_NAME: "${JDBC_RESOURCE_NAME}"
+  java-service-database:
+    image: mysql:5.7
+    container_name: java-service-database
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: "${MYSQL_ROOT_PASSWORD}"
+      MYSQL_USER: "${MYSQL_USER}"
+      MYSQL_PASSWORD: "${MYSQL_PASSWORD}"
+      MYSQL_DATABASE: "${MYSQL_DATABASE}"

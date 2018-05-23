@@ -14,6 +14,8 @@ services:
       MYSQL_USER: "${MYSQL_USER}"
       MYSQL_PASSWORD: "${MYSQL_PASSWORD}"
       MYSQL_DATABASE: "${MYSQL_DATABASE}"
+      MYSQL_PORT: "${MYSQL_PORT}"
+      JDBC_RESOURCE_NAME: "${JDBC_RESOURCE_NAME}"
   java-service-database:
     image: mysql:5.7
     container_name: java-service-database
